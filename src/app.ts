@@ -1,6 +1,6 @@
 import express from "express";
 import "express-async-errors";
-import { Request, Response, NextFunction } from "express";
+import cors from "cors";
 import { router } from "./routes";
 
 class App {
@@ -14,11 +14,11 @@ class App {
 
    config() {
       this.app.use(express.json());
+      this.app.use(cors())
    }
 
 
    router() {
-      this.app.use(express.urlencoded({ extended: true }));
       this.app.use(router);
    }
 

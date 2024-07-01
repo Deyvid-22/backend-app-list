@@ -7,7 +7,7 @@ class ListCustomerCrontroller {
 
         const custumer = await ListCustumerService.execute();
         
-        return res.json({custumer})
+        return res.json(custumer)
     }
 
 }
